@@ -3,5 +3,10 @@ class Movie < ActiveRecord::Base
   def self.all_ratings
     %w(G PG PG-13 NC-17 R)
   end
+def non_id_attributes
+    atts = self.attributes
+    atts.delete('id')
+    atts
+  end
 
 end
