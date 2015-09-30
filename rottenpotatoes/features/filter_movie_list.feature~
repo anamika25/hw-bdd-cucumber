@@ -36,6 +36,7 @@ Scenario: restrict to movies with 'PG' or 'R' ratings
   And I should see "Amelie"
   And I should see "The Incredibles"
   And I should see "Raiders of the Lost Ark"
+
   And I should not see "Aladdin"
   And I should not see "The Help"
   And I should not see "chocolat"
@@ -44,7 +45,10 @@ Scenario: restrict to movies with 'PG' or 'R' ratings
 
 Scenario: all ratings selected
   # see assignment
-  When I check the following ratings: G,R,PG-13,PG
+  #When I check "ratings_PG"
+  #And I check "ratings_R"
+  #And I check "ratings_PG-13"
+  #And I check "ratings_G"
+  When I check the following ratings: PG, R, G, PG-13
   And I press "ratings_submit"
-  #Then I should be on the home page
-  And I should see all the movies
+  Then I should see all the movies
